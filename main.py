@@ -31,6 +31,11 @@ def executar_sistema():
 
             try:
                 qtd_notas = int(input(f"Quantas notas deseja inserir para {nome}? "))
+
+                if qtd_notas <= 0:
+                    print("Você precisa cadastrar pelo menos uma nota.")
+                    continue
+
                 notas = []
                 for i in range(qtd_notas):
                     nota = float(input(f"Digite a nota {i+1}: ")) # Fixed 'intput' to 'input'
@@ -79,3 +84,5 @@ def executar_sistema():
 ##Inicia o programa
 if __name__ == "__main__": # Fixed 'if__name__' and colon
     executar_sistema()
+
+
